@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-//protótipos
+//protï¿½tipos
 void calculaArgamassa();
 void calculaAco();
+void calculaConcretoObra();
+void calculaConcretoUsinado();
+void calculaTijolos();
 
 int main() {
 
@@ -33,13 +36,16 @@ int main() {
 			calculaAco();
 			break;
 		case 3:
+			calculaConcretoObra();
 			break;
 		case 4:
+			calculaConcretoUsinado();
 			break;
 		case 5:
+			calculaTijolos();
 			break;
 		default:
-			printf("Opção invalida");
+			printf("OpÃ§Ã£o invalida");
 			break;
 		}
 	}
@@ -73,6 +79,8 @@ void calculaArgamassa(){
 
 	switch (tipo)
 	{
+	case 0:
+		return;
 	case 1:
 		printf("Os materiais usados sao cimento e areia, nas proporcoes 1:12\n");
 		rendimentoCimento = 5;
@@ -123,7 +131,7 @@ void calculaArgamassa(){
 		printf("Cal: %f sacos de 20kg\n", cal);
 		break;
 	default:
-		printf("Opção invalida");
+		printf("OpÃ§Ã£o invalida");
 	}
 }
 
@@ -135,7 +143,7 @@ void calculaAco() {
 
 	printf("O calculo do aco necessario e divido em duas etapas, primeiro se calcula a quantidade que sera ");
 	printf("gasto com a metragem linear da coluna, em seguida se calcula a quantidade que sera gasta com os estribus ");
-	printf("que estão presentes nas colunas\n\n");
+	printf("que estï¿½o presentes nas colunas\n\n");
 	printf("Para calcular a metragem linear da coluna informe a altura da coluna e a quantidade de barras\n");
 	printf("Informe a altura da coluna: ");
 	scanf("%f", &altura);
@@ -173,13 +181,67 @@ void calculaAco() {
 
 void calculaConcretoObra() {
 
+	int tipo;
+	float largura, comprimento, altura, volume;
+	float cimento, areia, pedra, agua;
+
+	printf("O concreto e feito com os materiais: cimento, areia, pedra e agua. A proporcao entre eles muda"
+	 " de acordo com a finalidade do concreto.\n");
+
+	printf("Escolha a finalidade do concreto: \n");
+	printf("1 - Laje\n");
+	printf("2 - FundaÃ§Ã£o (colunas, sapatas, vigas)\n");
+	printf("3 - Contrapiso ou calÃ§ada\n");
+	printf("0 - Voltar\n");
+
+	scanf("%d", &tipo);
+
+
+	printf("informe as dimensoes para se calcular a quantidade necessaria: \n");
+
+	printf("Informe a largura: ");
+	scanf("%f", &largura);
+	printf("Informe o comprimento: ");
+	scanf("%f", &comprimento);
+	printf("Informe a altura: ");
+	scanf("%f", &altura);
+
+	volume = largura * comprimento * altura;
+
+	switch (tipo)
+	{
+	case 1:
+		printf("A proporcao dos materiais para o concreto de laje e de 1:1,5:2 sendo cimento, areia e pedra respectivamente, a agua e "
+		"medida em funÃ§Ã£o do volume de concreto, sendo 189 litros por metro cubico.\n");
+		cimento = 7.7 * volume;
+		areia = 0.524 * volume;
+		pedra = 0.818 * volume;
+		agua = 189 * volume;
+
+		printf("Quantidade necessÃ¡rias: \n");
+		printf("Cimento: %f.2 sacos de 50kg\n", cimento);
+		printf("Areia: %f.2 metros cubicos\n", areia);
+		printf("Pedra: %f.2 metros cubicos\n", pedra);
+		printf("Agua: %f.2 litros\n", agua);
+		break;
+	case 2:
+		break;
+	case 3:
+		break;	
+	default:
+		printf("opcao invalida");
+		break;
+	}
+	
+
+
 }
 
 void calculaConcretoUsinado() {
 
 	float largura, comprimento, altura, volume;// volumeTotal;
 
-	printf("O concreto usinado é vendido por metro cubico, sendo necessário apenas calcular o volume das áreas onde ele será usado\n");
+	printf("O concreto usinado e vendido por metro cubico, sendo necessario apenas calcular o volume a ser usado\n");
 	
 	printf("Informe a largura: ");
 	scanf("%f", &largura);
@@ -195,6 +257,9 @@ void calculaConcretoUsinado() {
 	
 }
 
+void calculaTijolos(){
+
+}
 
 
 
