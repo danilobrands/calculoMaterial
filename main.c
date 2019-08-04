@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-//prot�tipos
+//prototipos
 void calculaArgamassa();
 void calculaAco();
 void calculaConcretoObra();
@@ -9,6 +9,8 @@ void calculaConcretoUsinado();
 void calculaTijolos();
 
 int main() {
+
+	system("color 70");
 
 	int material;
 
@@ -225,8 +227,32 @@ void calculaConcretoObra() {
 		printf("Agua: %f.2 litros\n", agua);
 		break;
 	case 2:
+		printf("A proporcao dos materiais para o concreto de fundação e de 1:2:3 sendo cimento, areia e pedra respectivamente, a agua e "
+			"medida em função do volume de concreto, sendo 210 litros por metro cubico.\n");
+		cimento = 6.9 * volume;
+		areia = 0.522 * volume;
+		pedra = 0.768 * volume;
+		agua = 210 * volume;
+
+		printf("Quantidade necessárias: \n");
+		printf("Cimento: %f.2 sacos de 50kg\n", cimento);
+		printf("Areia: %f.2 metros cubicos\n", areia);
+		printf("Pedra: %f.2 metros cubicos\n", pedra);
+		printf("Agua: %f.2 litros\n", agua);
 		break;
 	case 3:
+		printf("A proporcao dos materiais para o concreto de contrapiso ou calçada e de 1:3:6 sendo cimento, areia e pedra respectivamente, a agua e "
+			"medida em função do volume de concreto, sendo 168 litros por metro cubico.\n");
+		cimento = 4.2 * volume;
+		areia = 0.564 * volume;
+		pedra = 0.882 * volume;
+		agua = 168 * volume;
+
+		printf("Quantidade necessárias: \n");
+		printf("Cimento: %f.2 sacos de 50kg\n", cimento);
+		printf("Areia: %f.2 metros cubicos\n", areia);
+		printf("Pedra: %f.2 metros cubicos\n", pedra);
+		printf("Agua: %f.2 litros\n", agua);
 		break;	
 	default:
 		printf("opcao invalida");
@@ -258,6 +284,65 @@ void calculaConcretoUsinado() {
 }
 
 void calculaTijolos(){
+
+	printf("O calculo do numero de tijolos e feito com base na area das paredes, onde devemos levar em conta suas dimensoes e "
+	"espacos reservados, como de portas e janelas. Alem disso se deve considerar as dimensoes do tijolo e a quantidade de argamassa "
+	"entre os tijolos\n");
+
+	int opcao;
+	float comprimentoT, alturaT, argamasssaT, areaT;
+	float comprimentoP, alturaP, areaBruta;
+	float comprimentoJ, alturaJ, areaJ;
+
+	printf("Para começar informe as dimensões do tijolo\n");
+	printf("Informe o comprimento: ");
+	scanf("%f", &comprimentoT);
+	printf("Informe a altura: ");
+	scanf("%f", &alturaT);
+	printf("Agora informe a espessura da argamassa: ");
+	scanf("%f", &espessuraArgamassa);
+	areaT = (comprimentoT + (argamasssaT/2)) * (alturaT + (argamasssaT/2));
+
+	do{		
+		printf("Agora informe as dimensoes das paredes, portas e janelas\n")
+		printf(	"1 - Adicionar parede\n"
+				"2 - Reduzir area de janela ou porta\n"
+				"3 - Finalizar");
+
+		switch (opcao)
+		{
+		case 1:
+				printf("Informe o comprimento: ");
+				scanf("%f", &comprimentoP);
+				printf("Informe a altura: ");
+				scanf("%f", &alturaP);
+				areaBruta += (comprimentoP * alturaP);
+			break;
+		case 2:
+			/* code */
+			break;
+		case 3:
+			/* code */
+			break;		
+		default:
+			printf("Opcao invalida!");
+			break;
+		}
+
+
+
+		/* code */
+	} while (condição != 3);
+	
+	
+
+	
+
+	areaBruta = comprimento * altura;
+
+
+
+
 
 }
 
