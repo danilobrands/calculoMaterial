@@ -205,7 +205,7 @@ void calculaConcretoObra() {
 
 	printf("informe as dimensoes para se calcular a quantidade necessaria: \n");
 
-	printf("Informe a largura: ");
+	printf("Informe a espessura: ");
 	scanf("%f", &largura);
 	printf("Informe o comprimento: ");
 	scanf("%f", &comprimento);
@@ -218,13 +218,13 @@ void calculaConcretoObra() {
 	{
 	case 1:
 		printf("A proporcao dos materiais para o concreto de laje e de 1:1,5:2 sendo cimento, areia e pedra respectivamente, a agua e "
-		"medida em função do volume de concreto, sendo 189 litros por metro cubico.\n");
+		"medida em funcao do volume de concreto, sendo 189 litros por metro cubico.\n");
 		cimento = 7.7 * volume;
 		areia = 0.524 * volume;
 		pedra = 0.818 * volume;
 		agua = 189 * volume;
 
-		printf("Quantidade necessárias: \n");
+		printf("\nQuantidade necessárias: \n");
 		printf("Cimento: %.2f sacos de 50kg\n", cimento);
 		printf("Areia: %.2f metros cubicos\n", areia);
 		printf("Pedra: %.2f metros cubicos\n", pedra);
@@ -232,13 +232,13 @@ void calculaConcretoObra() {
 		break;
 	case 2:
 		printf("A proporcao dos materiais para o concreto de fundação e de 1:2:3 sendo cimento, areia e pedra respectivamente, a agua e "
-			"medida em função do volume de concreto, sendo 210 litros por metro cubico.\n");
+			"medida em funcao do volume de concreto, sendo 210 litros por metro cubico.\n");
 		cimento = 6.9 * volume;
 		areia = 0.522 * volume;
 		pedra = 0.768 * volume;
 		agua = 210 * volume;
 
-		printf("Quantidade necessárias: \n");
+		printf("\nQuantidade necessárias: \n");
 		printf("Cimento: %.2f sacos de 50kg\n", cimento);
 		printf("Areia: %.2f metros cubicos\n", areia);
 		printf("Pedra: %.2f metros cubicos\n", pedra);
@@ -246,13 +246,13 @@ void calculaConcretoObra() {
 		break;
 	case 3:
 		printf("A proporcao dos materiais para o concreto de contrapiso ou calçada e de 1:3:6 sendo cimento, areia e pedra respectivamente, a agua e "
-			"medida em função do volume de concreto, sendo 168 litros por metro cubico.\n");
+			"medida em funcao do volume de concreto, sendo 168 litros por metro cubico.\n");
 		cimento = 4.2 * volume;
 		areia = 0.564 * volume;
 		pedra = 0.882 * volume;
 		agua = 168 * volume;
 
-		printf("Quantidade necessárias: \n");
+		printf("\nQuantidade necessarias: \n");
 		printf("Cimento: %.2f sacos de 50kg\n", cimento);
 		printf("Areia: %.2f metros cubicos\n", areia);
 		printf("Pedra: %.2f metros cubicos\n", pedra);
@@ -283,7 +283,7 @@ void calculaConcretoUsinado() {
 	volume = largura * comprimento * altura;
 	//volumeTotal += volume;
 
-	printf("Quantidade de concreto necessaria: %.2f ", volume);
+	printf("Quantidade de concreto necessaria: %.2f metros cubicos", volume);
 	
 }
 
